@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+body{
+  background-color: rgb(240, 240, 240)
+}
+.redName{
+  color: rgb(0, 121, 151);
+}
+button {
+  background-color: darkgrey
+}
