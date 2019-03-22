@@ -1,3 +1,16 @@
 .App {
   text-align: center;
 }
+
+button:hover{
+  outline: none
+}
+.red {
+  color: darkcyan
+}
+.bold{
+  font-weight: bold;
+}
+.bigger {
+font-size: 120%
+}

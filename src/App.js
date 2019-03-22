@@ -43,11 +43,12 @@ class App extends Component {
 
   render () {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
       font: 'inherit',
-      border: '1px solid blue',
+      border: '2px solid black',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      outline: 'none'
     };
 
     let persons = null;
@@ -65,12 +66,24 @@ class App extends Component {
           }
         </div> 
       )
+      style.backgroundColor = 'red'
     }
 
+    let classes =[];
+    if(this.state.persons.length <= 2){
+      classes.push('red');
+    }
+    if(this.state.persons.length <=1){
+      classes.push('bold');
+    }
+    if(this.state.persons.length <=0){
+      classes.push('bigger');
+    }
+    
     return (
       <div className="App">
         <h1>Hi, I'm a React App</h1>
-        <p>This is really working!</p>
+        <p className={classes.join(' ')}>This is really working!</p>
         <button 
           style={style}
           onClick={this.togglePersonsHandler}>Show/Hide people
