@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import styyles from './App.module.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -17,15 +17,13 @@ class App extends Component {
     const personIndex = this.state.persons.findIndex(p => {
       return p.id === id
     });
-    console.log(personIndex)
+  
     const person = {
       ...this.state.persons[personIndex]
     }
     person.name = event.target.value;
-
     const persons = [...this.state.persons];
     persons[personIndex] = person;
-
     this.setState({persons: persons});
   }
 
@@ -42,16 +40,8 @@ class App extends Component {
   }
 
   render () {
-    const style = {
-      backgroundColor: 'green',
-      font: 'inherit',
-      border: '2px solid black',
-      padding: '8px',
-      cursor: 'pointer',
-      outline: 'none'
-    };
-
-    let persons = null;
+  
+  let persons = null;
     if(this.state.showPersons){
       persons = (
         <div>
@@ -66,26 +56,25 @@ class App extends Component {
           }
         </div> 
       )
-      style.backgroundColor = 'red'
+      
     }
 
-    let classes =[];
+    const classes =[];
     if(this.state.persons.length <= 2){
-      classes.push('red');
+      classes.push(styyles.red);
     }
     if(this.state.persons.length <=1){
-      classes.push('bold');
+      classes.push(styyles.bold);
     }
     if(this.state.persons.length <=0){
-      classes.push('bigger');
+      classes.push(styyles.bigger);
     }
-    
+     
     return (
-      <div className="App">
+      <div className={styyles.App}>
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is really working!</p>
-        <button 
-          style={style}
+        <button
           onClick={this.togglePersonsHandler}>Show/Hide people
         </button>
         {persons}

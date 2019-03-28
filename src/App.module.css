@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+button:hover{
+  outline: none;
+}
+.red {
+  color: darkcyan;
+}
+.bold{
+  font-weight: bold;
+}
+.bigger {
+font-size: 120%
+}
+
+.App button {
+  background-color: green;
+  border: 2px solid black;
+  padding: 8px;
+  cursor: pointer;
+  outline: none;
+}
